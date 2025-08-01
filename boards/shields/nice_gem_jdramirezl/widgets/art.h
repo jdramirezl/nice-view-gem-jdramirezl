@@ -13,5 +13,6 @@
 
 // Declare the image variables that are used in other files
 LV_IMG_DECLARE(photo3);
+LV_IMG_DECLARE(bear);
 
 #endif // ART_H 
