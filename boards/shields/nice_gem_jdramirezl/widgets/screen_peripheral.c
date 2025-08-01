@@ -29,11 +29,6 @@ static void draw_top(lv_obj_t *widget, lv_color_t cbuf[], const struct status_st
     lv_obj_t *canvas = lv_obj_get_child(widget, 0);
     fill_background(canvas);
 
-    // Draw static image on canvas (using crystal_01 which fits the display)
-    lv_draw_img_dsc_t img_dsc;
-    lv_draw_img_dsc_init(&img_dsc);
-    lv_canvas_draw_img(canvas, 36, 0, &crystal_01, &img_dsc);
-
     // Draw widgets
     draw_output_status(canvas, state);
     draw_battery_status(canvas, state);
@@ -117,8 +112,10 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
     lv_obj_align(top, LV_ALIGN_TOP_RIGHT, 0, 0);
     lv_canvas_set_buffer(top, widget->cbuf, BUFFER_SIZE, BUFFER_SIZE, LV_IMG_CF_TRUE_COLOR);
 
-    // Draw static image instead of animation
-    // Note: Image is drawn on canvas in draw_top function
+    // Draw static image at the bottom of the screen
+    lv_obj_t *art = lv_img_create(widget->obj);
+    lv_img_set_src(art, &photo3);
+    lv_obj_align(art, LV_ALIGN_TOP_LEFT, 0, 0);
 
     sys_slist_append(&widgets, &widget->node);
     widget_battery_status_init();
