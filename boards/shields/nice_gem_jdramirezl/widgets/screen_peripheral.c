@@ -115,7 +115,8 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
     // Draw static image at the bottom of the screen, sized to fit
     lv_obj_t *art = lv_img_create(widget->obj);
     // lv_img_set_src(art, &photo3);
-    lv_img_set_src(art, &bear);
+    // lv_img_set_src(art, &bear);
+    lv_img_set_src(art, &uzumaki);
     // lv_obj_set_size(art, 68, 136);  // Width: 68, Height: 136
     lv_obj_align(art, LV_ALIGN_BOTTOM_LEFT, 0, 0);
 

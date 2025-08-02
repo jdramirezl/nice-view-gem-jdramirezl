@@ -14,5 +14,6 @@
 // Declare the image variables that are used in other files
 LV_IMG_DECLARE(photo3);
 LV_IMG_DECLARE(bear);
+LV_IMG_DECLARE(uzumaki);
 
 #endif // ART_H 
